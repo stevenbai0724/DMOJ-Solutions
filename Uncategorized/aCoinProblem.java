@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/acoinproblem
 import java.util.*;
 import java.io.*;
 public class aCoinProblem {

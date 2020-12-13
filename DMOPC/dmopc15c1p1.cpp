@@ -14,7 +14,7 @@ int main(){
         d*=100;
         int num = d;
 
-        if(num>ans){
+        if(num>=ans){
             name = s;
             ans = num;
         }

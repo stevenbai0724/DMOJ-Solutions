@@ -31,7 +31,7 @@ signed main(){
             int newy = nxt.second;
             if(neww+dis[y]<dis[newy]){
                 dis[newy] = neww+dis[y];
-                q.push({neww, newy});
+                q.push({dis[newy], newy});
             }
         }
     }

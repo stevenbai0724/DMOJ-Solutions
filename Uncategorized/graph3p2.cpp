@@ -28,7 +28,7 @@ signed main(){
             int newy = nxt.second;
             if(neww+dis[y]<dis[newy]){//check if distance can be optimized
                 dis[newy] = neww+dis[y];
-                q.push({neww, newy});
+                q.push({dis[newy], newy});
             }
         }
     }

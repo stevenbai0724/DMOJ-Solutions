@@ -1,4 +1,4 @@
-/https://dmoj.ca/problem/lcs
+//https://dmoj.ca/problem/lcs
 #include <bits/stdc++.h>
 using namespace std;
 int main(){

@@ -1,4 +1,3 @@
-//https://dmoj.ca/problem/dmopc14c1p5
 #include <bits/stdc++.h>
 using namespace std;
 int main(){

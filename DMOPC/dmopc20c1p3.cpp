@@ -15,7 +15,7 @@ signed main(){
     for(int i =1; i<=n; i++){
         cin>>arr[i];
     }
-    for(int i =2; i<n; i++){
+    for(int i =2; i<=n; i++){
         if(arr[i]<arr[i-1]+p[i-1]){
             p[i] = arr[i-1]+p[i-1]-arr[i];
         }
@@ -24,8 +24,7 @@ signed main(){
         if(arr[i]<arr[i+1]+s[i+1]){
             s[i] = arr[i+1]+s[i+1]-arr[i];
         }
-    }
-    
+    } 
     int sum1 = 0;
     int sum2 = 0;
     for(int i =1; i<=n;i++){

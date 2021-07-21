@@ -15,65 +15,34 @@ signed main(){
     cin.tie(nullptr)->sync_with_stdio(false);
     
     int n; cin>>n;
-    vector<int>arrA(n+1);
-    vector<int>arrB(n+1);
-    vector<int>psaA(n+1);
-    vector<int>psaB(n+1);
+    
+    vector<int>a(n+1);
+    vector<int>b(n+1);
+
     int cntA = 0;
     int cntB = 0;
 
     for(int i=1;i<=n;i++){
-        cin>>arrA[i];
-        if(arrA[i]==1)cntA++;
-        psaA[i] = cntA;
+        cin>>a[i];
+        cntA += (a[i]==1);
     }
     for(int i=1;i<=n;i++){
-        cin>>arrB[i];
-        if(arrB[i]==1)cntB++;
-        psaB[i] = cntB;
+        cin>>b[i];
+        cntB += (b[i]==1);
     }
-    if(cntA!=cntB){
+    if(cntB!=cntA){
         cout<<-1<<"\n";
         return 0;
     }
-    vector<pair<int, int>>ans;
 
-    for(int i=n;i>=1;i--){
-        if(arrB[i] == 1 && arrA[i] == 1)continue;
-        if(arrB[i] == 1){
-            int j = i;
 
-            while(arrB[j-1]==1 && j>=1) j--;
+    vector<int>aInd;
+    vector<int>bInd;
 
-            int cnt = i-j+1;
-            int take = -1;
-
-            for(int k=i;k>=1;k--){
-                cnt -= arrA[k];
-                arrA[k] = 0;
-                if(cnt==0){
-                    take = k;
-                    break;
-                    
-                }
-            }
-            if(cnt!=0){
-                cout<<-1<<"\n";
-                return 0;
-            }
-
-            ans.push_back({take, i});
-
-            i = j;
-
-        }
+    for(int i=1;i<=n;i++){
+        if(a[i]==0)aInd.push_back(i);
+        if(b[i]==0)bInd.push_back(i);
     }
-    cout<<ans.size()<<"\n";
-
-    for(auto p: ans){
-        cout<<p.first<<" "<<p.second<<"\n";
-    }
-
 
 
 
